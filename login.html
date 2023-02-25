@@ -49,13 +49,15 @@
             };
 
             let curLocal = JSON.parse(localStorage.getItem("currentUser"));
-
-            //pushing the object inside the array
-            user.push(...curLocal);
-            user.push(obj);
-
+              
+            if(curLocal){
+             user.push(...curLocal);
+              user.push(obj);
+              localStorage.removeItem("currentUser");
+            localStorage.setItem("currentUser", JSON.stringify(user));
+            }
+            
             //setting the array in local storage
-            localStorage.removeItem("currentUser");
             localStorage.setItem("currentUser", JSON.stringify(user));
             i++;
 
