@@ -55,11 +55,19 @@
               user.push(obj);
               localStorage.removeItem("currentUser");
             localStorage.setItem("currentUser", JSON.stringify(user));
+            i++;
+              
             }
-            user.push(obj);
+            else{
+               user.push(obj);
             //setting the array in local storage
             localStorage.setItem("currentUser", JSON.stringify(user));
             i++;
+              
+              
+            }
+            
+           
 
             //navigating to dashboard
             window.location.href = "./dashboard.html";
