@@ -56,7 +56,7 @@
               localStorage.removeItem("currentUser");
             localStorage.setItem("currentUser", JSON.stringify(user));
             }
-            
+            user.push(obj);
             //setting the array in local storage
             localStorage.setItem("currentUser", JSON.stringify(user));
             i++;
